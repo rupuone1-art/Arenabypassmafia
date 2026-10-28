@@ -1,6 +1,0 @@
-{
-  "name": "ИИ Мафия: Битва Интеллектов",
-  "description": "Психологическая ролевая игра Мафия на базе ИИ с режимами игры, наблюдения и чтения мыслей",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
