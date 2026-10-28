@@ -1,0 +1,17 @@
+# Blueprint для Render (https://render.com) — бесплатный Node-веб-сервис.
+# Даёт постоянную ссылку вида https://ai-mafia-arena.onrender.com
+services:
+  - type: web
+    name: ai-mafia-arena
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Ключ можно не задавать: игрок вставляет его в интерфейсе.
+      # - key: YUKINO_API_KEY
+      #   sync: false
+      # - key: GEMINI_API_KEY
+      #   sync: false
