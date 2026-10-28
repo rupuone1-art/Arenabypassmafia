@@ -1,5 +1,8 @@
 name: CORS probe (temporary)
 on:
+  push:
+    branches: ['arena/**']
+    paths: ['.github/workflows/cors-probe.yml']
   workflow_dispatch:
 jobs:
   probe:
