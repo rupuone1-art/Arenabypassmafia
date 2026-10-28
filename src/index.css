@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+/* Allow native text selection and long-press copying everywhere on all mobile devices and OneUI/Android/iOS */
+* {
+  -webkit-touch-callout: default !important;
+}
+
+html, body, #root, div, p, span, main, section, article, h1, h2, h3, h4, h5, h6, pre, code, blockquote, label {
+  -webkit-user-select: text !important;
+  user-select: text !important;
+}
+
+/* Ensure interactive button icons don't trigger accidental drag or highlight glitches */
+button img, button svg {
+  pointer-events: none;
+}
+
