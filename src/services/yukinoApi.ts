@@ -19,7 +19,52 @@ export class ApiUnavailableError extends Error {
 
 const PROXY_ENDPOINT = '/api/yukino/v1/chat/completions';
 const DIRECT_ENDPOINT = 'https://api.yukino.my/v1/chat/completions';
+const STATUS_ENDPOINT = '/api/ai/status';
 const MODEL = 'yukino-free';
+
+/**
+ * Есть ли рядом наш Node-сервер (Express-прокси и серверный Gemini).
+ *
+ * На GitHub Pages / любом статическом хостинге backend отсутствует, и тогда
+ * браузер обращается к Yukino напрямую, своим ключом из localStorage.
+ * Один раз проверяем и запоминаем.
+ */
+type Backend = 'unknown' | 'available' | 'absent';
+let backendCache: Backend = 'unknown';
+let backendProbe: Promise<Backend> | null = null;
+let serverGeminiEnabled = false;
+
+async function detectBackend(): Promise<Backend> {
+  if (backendCache !== 'unknown') return backendCache;
+  if (backendProbe) return backendProbe;
+
+  backendProbe = (async (): Promise<Backend> => {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 3000);
+    try {
+      const res = await fetch(STATUS_ENDPOINT, { signal: controller.signal });
+      clearTimeout(timer);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      serverGeminiEnabled = !!data?.gemini;
+      backendCache = 'available';
+    } catch {
+      clearTimeout(timer);
+      backendCache = 'absent';
+      serverGeminiEnabled = false;
+    } finally {
+      backendProbe = null;
+    }
+    return backendCache;
+  })();
+
+  return backendProbe;
+}
+
+/** Для UI и тестов: куда сейчас ходят запросы. */
+export function getTransportInfo(): { backend: Backend; direct: boolean } {
+  return { backend: backendCache, direct: backendCache === 'absent' };
+}
 
 /**
  * Ключ берётся из localStorage — его вставляет пользователь в лобби.
@@ -69,6 +114,9 @@ async function callServerGemini(
   userPrompt: string,
   temperature = 0.85
 ): Promise<ApiCallResult | null> {
+  // На статическом хостинге серверного Gemini нет — не тратим время на запрос.
+  if ((await detectBackend()) === 'absent' || !serverGeminiEnabled) return null;
+
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 60000);
 
@@ -214,12 +262,13 @@ async function callAiWithRetries(
         await sleep(retryDelays[attempt] + jitter);
       }
 
-      // Первая попытка — через свой сервер, вторая — напрямую (если бэкенда нет).
+      // Если рядом есть наш сервер — идём через прокси, иначе напрямую в Yukino.
+      const useDirect = (await detectBackend()) === 'absent';
       const { result, error } = await callYukino(
         systemPrompt,
         userPrompt,
         temperature,
-        attempt % 2 === 1
+        useDirect
       );
       if (result) return result;
       if (error) lastError = error;
