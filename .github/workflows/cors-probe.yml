@@ -1,0 +1,22 @@
+name: CORS probe (temporary)
+on:
+  workflow_dispatch:
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: OPTIONS preflight
+        run: |
+          curl -sS -i -X OPTIONS https://api.yukino.my/v1/chat/completions \
+            -H 'Origin: https://rupuone1-art.github.io' \
+            -H 'Access-Control-Request-Method: POST' \
+            -H 'Access-Control-Request-Headers: authorization,content-type,x-yukino-key' \
+            --max-time 25 | head -40 || echo "OPTIONS failed"
+      - name: POST with Origin
+        run: |
+          curl -sS -i -X POST https://api.yukino.my/v1/chat/completions \
+            -H 'Origin: https://rupuone1-art.github.io' \
+            -H 'Content-Type: application/json' \
+            -H 'Authorization: Bearer sk-yuk-invalid-probe' \
+            -d '{"model":"yukino-free","messages":[{"role":"user","content":"ping"}]}' \
+            --max-time 25 | head -40 || echo "POST failed"
