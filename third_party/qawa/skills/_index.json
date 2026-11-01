@@ -1,0 +1,143 @@
+{
+  "version": 1,
+  "default": {
+    "skill": "brainstorming",
+    "note": "افتراضي آمن: ابدأ من النية قبل الكود"
+  },
+  "skills": [
+    {
+      "name": "brainstorming",
+      "path": "brainstorming/SKILL.md",
+      "summary": "قبل أي عمل إبداعي: ميزة، مكوّن، تطبيق، أو تعديل سلوك",
+      "keywords": {
+        "ابن": 4, "ابني": 4, "اعمل": 3, "اصنع": 3, "صمم": 3, "ابدا": 3, "ابدأ": 3,
+        "جديد": 3, "ميزة": 4, "ميزه": 4, "مشروع": 3, "نموذج": 3, "تطبيق": 2, "موقع": 2,
+        "فكرة": 4, "افكار": 3,
+        "build": 4, "create": 4, "make": 3, "new": 2, "feature": 4, "design": 3,
+        "prototype": 4, "idea": 3, "app": 2, "website": 2, "script": 2, "refactor": 2
+      }
+    },
+    {
+      "name": "writing-plans",
+      "path": "writing-plans/SKILL.md",
+      "summary": "تفكيك العمل إلى خطة مهام صغيرة قابلة للمراجعة",
+      "keywords": {
+        "خطة": 5, "خطه": 5, "خطط": 4, "قسم": 3, "قسّم": 3, "فكك": 3, "مهام": 3,
+        "خريطة": 2,
+        "plan": 5, "planning": 4, "breakdown": 4, "tasks": 3, "roadmap": 3
+      }
+    },
+    {
+      "name": "executing-plans",
+      "path": "executing-plans/SKILL.md",
+      "summary": "تنفيذ خطة قائمة مهمة بمهمة داخل الجلسة (دون subagent)",
+      "keywords": {
+        "نفذ": 5, "نفّذ": 5, "طبق": 3, "انفذ": 4, "نفذلي": 4,
+        "implement": 5, "execute": 4, "run the plan": 4
+      }
+    },
+    {
+      "name": "test-driven-development",
+      "path": "test-driven-development/SKILL.md",
+      "summary": "دورة RED-GREEN-REFACTOR: اختبار فاشل أولاً، ثم أقل كود",
+      "keywords": {
+        "tdd": 6, "اختبار": 4, "اختبر": 3, "اختبارات": 3, "تغطية": 4, "تغطيه": 4,
+        "test-first": 5, "red green": 5,
+        "unit test": 4, "coverage": 4
+      }
+    },
+    {
+      "name": "systematic-debugging",
+      "path": "systematic-debugging/SKILL.md",
+      "summary": "تشخيص جذري: 4 مراحل، لا تخمين ولا إصلاح بالصدفة",
+      "keywords": {
+        "خطأ": 6, "خطا": 6, "عطل": 5, "فشل": 5, "يفشل": 5, "تفشل": 5, "مشكل": 4,
+        "مشكلة": 4, "لا يعمل": 5, "لا يشتغل": 5, "صحح": 3, "اصلح": 3, "أصلح": 3,
+        "ديبج": 4, "استثناء": 4, " regress": 3,
+        "bug": 6, "error": 5, "exception": 6, "traceback": 6, "crash": 5,
+        "fail": 4, "fails": 4, "failing": 4, "broken": 5, "debug": 5, "fix": 4,
+        "regression": 5
+      }
+    },
+    {
+      "name": "requesting-code-review",
+      "path": "requesting-code-review/SKILL.md",
+      "summary": "قائمة تحقّق قبل طلب مراجعة الكود",
+      "keywords": {
+        "راجع": 5, "مراجعة": 4, "ريفيو": 4, "افحص الكود": 4,
+        "review": 5, "code review": 6
+      }
+    },
+    {
+      "name": "receiving-code-review",
+      "path": "receiving-code-review/SKILL.md",
+      "summary": "الرد على ملاحظات المراجعة دون جدال ولا خضوع",
+      "keywords": {
+        "تلقيت مراجعة": 6, "تعليقات المراجعة": 5, "رد على المراجعة": 5,
+        "review feedback": 6, "apply review": 5, "respond to review": 5
+      }
+    },
+    {
+      "name": "using-git-worktrees",
+      "path": "using-git-worktrees/SKILL.md",
+      "summary": "عزل العمل في worktree حتى لا تتلوّث الفرع الحالي",
+      "keywords": {
+        "worktree": 6, "عزل": 4, "معزول": 4, "مساحة عمل": 3,
+        "isolate": 4, "isolated": 4, "workspace": 3
+      }
+    },
+    {
+      "name": "finishing-a-development-branch",
+      "path": "finishing-a-development-branch/SKILL.md",
+      "summary": "إنهاء الفرع: تحقق، ثم دمج/PR/حذف بقرار صريح",
+      "keywords": {
+        "ادمج": 6, "دمج": 5, "انهي": 4, "أنهِ": 4, "انهاء": 4, "الفرع": 3, "برانش": 3,
+        "merge": 6, "pull request": 6, "finish": 4, "land": 3, "ship": 3
+      }
+    },
+    {
+      "name": "verification-before-completion",
+      "path": "verification-before-completion/SKILL.md",
+      "summary": "لا تقل «تم» قبل تشغيل أمر تحقّق حقيقي ورؤية نتيجته",
+      "keywords": {
+        "تأكد": 6, "تأكّد": 6, "تحقق": 6, "تأكدلي": 5, "جاهز": 3, "خلص": 3,
+        "verify": 6, "verification": 6, "confirm": 4, "is it done": 5
+      }
+    },
+    {
+      "name": "diagnosing-superpowers",
+      "path": "diagnosing-superpowers/SKILL.md",
+      "summary": "تشخيص جلسة تصرّفت فيها المهارات بغرابة، بدليل من السجل",
+      "keywords": {
+        "qawa": 4, "superpowers": 5, "المهارة": 3, "المهارات": 3, "الجلسة": 3,
+        "ليش ما اشتغلت": 5, "diagnose superpowers": 6, "skill did not fire": 6
+      }
+    },
+    {
+      "name": "writing-skills",
+      "path": "writing-skills/SKILL.md",
+      "summary": "كتابة مهارة جديدة بأسلوب Superpowers",
+      "keywords": {
+        "مهارة جديدة": 6, "اكتب مهارة": 6, "انشئ مهارة": 6,
+        "new skill": 6, "write skill": 6, "author skill": 5
+      }
+    },
+    {
+      "name": "using-superpowers",
+      "path": "using-superpowers/SKILL.md",
+      "summary": "شرح نظام المهارات — يُقرأ عند الحاجة فقط، لا يُوجَّه إليه تلقائياً",
+      "routable": false,
+      "keywords": {}
+    }
+  ],
+  "unavailable": [
+    {
+      "name": "subagent-driven-development",
+      "reason": "تحتاج أداة subagent غير موجودة في هذه البيئة — استعمل executing-plans"
+    },
+    {
+      "name": "dispatching-parallel-agents",
+      "reason": "تحتاج أداة subagent غير موجودة في هذه البيئة"
+    }
+  ]
+}

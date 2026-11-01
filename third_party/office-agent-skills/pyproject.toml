@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "office-agent-skills"
+version = "0.1.0"
+description = "Cross-platform office document skills and utilities for AI agents"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "Apache-2.0"
+dependencies = [
+  "openpyxl>=3.1",
+  "python-docx>=1.1",
+  "python-pptx>=0.6.23",
+  "pandas>=2.0",
+  "pypdf>=4.0",
+  "pdfplumber>=0.10",
+  "reportlab>=4.0",
+  "matplotlib>=3.7",
+  "Pillow>=10.0",
+  "lxml>=5.0",
+  "defusedxml>=0.7",
+  "markitdown[pptx]>=0.0.1",
+  "weasyprint>=60",
+]
+
+# This repository distributes skills, scripts, styles, and templates rather than
+# importable Python packages. Keep the editable installation valid without
+# asking setuptools to guess that these directories are Python packages.
+[tool.setuptools]
+packages = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.ruff]
+line-length = 100

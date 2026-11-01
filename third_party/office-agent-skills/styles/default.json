@@ -1,0 +1,29 @@
+{
+  "name": "default",
+  "colors": {
+    "primary": "17324D",
+    "secondary": "2E75B6",
+    "accent": "F4B183",
+    "background": "FFFFFF",
+    "text": "222222",
+    "muted": "667085"
+  },
+  "fonts": {
+    "heading": "Arial",
+    "body": "Arial"
+  },
+  "document": {
+    "page_size": "A4",
+    "margin_mm": 20
+  },
+  "presentation": {
+    "layout": "16:9",
+    "title_size_pt": 34,
+    "body_size_pt": 18
+  },
+  "spreadsheet": {
+    "header_fill": "17324D",
+    "header_font_color": "FFFFFF",
+    "freeze_header": true
+  }
+}

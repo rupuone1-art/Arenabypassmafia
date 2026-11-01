@@ -1,10 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
 node_modules/
 build/
 dist/
 coverage/
 .DS_Store
 *.log
+.aistudio/
 .env
 .env.*
 !.env.example
-.aistudio/
+.qawa/*.lock
+.qawa/*.excl
+.qawa/*.tmp*

@@ -1,0 +1,29 @@
+{
+  "name": "corporate-blue",
+  "colors": {
+    "primary": "0B1F3A",
+    "secondary": "1769AA",
+    "accent": "F2A900",
+    "background": "FFFFFF",
+    "text": "17202A",
+    "muted": "5B6770"
+  },
+  "fonts": {
+    "heading": "Arial",
+    "body": "Arial"
+  },
+  "document": {
+    "page_size": "A4",
+    "margin_mm": 20
+  },
+  "presentation": {
+    "layout": "16:9",
+    "title_size_pt": 34,
+    "body_size_pt": 18
+  },
+  "spreadsheet": {
+    "header_fill": "0B1F3A",
+    "header_font_color": "FFFFFF",
+    "freeze_header": true
+  }
+}

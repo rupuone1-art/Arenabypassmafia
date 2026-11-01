@@ -1,0 +1,13 @@
+{
+  "template": "templates/report.docx",
+  "format": "docx",
+  "placeholders": {
+    "company_name": {"type": "text", "required": true},
+    "report_date": {"type": "text", "required": true},
+    "summary": {"type": "paragraph", "required": true}
+  },
+  "xlsx_cells": {
+    "company_name": "Inputs!B2",
+    "report_date": "Inputs!B3"
+  }
+}

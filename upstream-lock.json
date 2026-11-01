@@ -1,0 +1,90 @@
+{
+  "format_version": 1,
+  "sources": [
+    {
+      "name": "qawa",
+      "url": "https://github.com/supermorkat/qawa-arena",
+      "commit": "c9ad7c207ca6b6a4d79371843cf88b164a35972a",
+      "path": "third_party/qawa",
+      "archive_sha256": "994b2ce35b946b08d68983859f3249dbd13e40fca671a573e99db7923a84fc79",
+      "vendored_files": 138
+    },
+    {
+      "name": "superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "commit": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+      "path": "third_party/superpowers",
+      "archive_sha256": "da34247c51339cdd6175b3590261f16e25b08d46669afd5b6fc3f842ab303e20",
+      "vendored_files": 231
+    },
+    {
+      "name": "anthropic",
+      "url": "https://github.com/anthropics/skills",
+      "commit": "ca45fc496a3436251f191354091d557da31c15b5",
+      "path": "third_party/anthropic",
+      "archive_sha256": "8dd1ed88fb5fa5bf6d4d7d44a1333fe35a808f42594513009777374e97ccfdf0",
+      "vendored_files": 258
+    },
+    {
+      "name": "vercel-agent-skills",
+      "url": "https://github.com/vercel-labs/agent-skills",
+      "commit": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+      "path": "third_party/vercel",
+      "archive_sha256": "4e596cfe72717246faa129a952822b600ecef5ce220c6ad7daf3489473fbe7eb",
+      "vendored_files": 141
+    },
+    {
+      "name": "skills-cli",
+      "url": "https://github.com/vercel-labs/skills",
+      "commit": "92a9a34ac3bf88e695e468b90c7bf32f163d32c8",
+      "path": "third_party/skills-cli",
+      "archive_sha256": "a621b23858f3b190238ae3ccc42d1480ecce45e12dfac1d8a4ef79c969118a12",
+      "vendored_files": 155
+    },
+    {
+      "name": "office-agent-skills",
+      "url": "https://github.com/Harshuqt/office-agent-skills",
+      "commit": "f7fca24861614dc4b964dfacb31482dec04a887c",
+      "path": "third_party/office-agent-skills",
+      "archive_sha256": "6f30e1f79111473ff9fad2993b1a8a2b40af3e41a23572710f82602913ec76aa",
+      "vendored_files": 36
+    },
+    {
+      "name": "openai-pdf",
+      "url": "https://github.com/openai/skills",
+      "commit": "49f948faa9258a0c61caceaf225e179651397431",
+      "path": "third_party/openai",
+      "archive_sha256": "d0610c3eb29cfede17ba5aca1544817b317a03915a82037942958e2f54007ddf",
+      "vendored_files": 4
+    }
+  ],
+  "skills_cli_release": {
+    "version": "1.7.4",
+    "path": "packages/skills-1.7.4.tgz",
+    "url": "https://registry.npmjs.org/skills/-/skills-1.7.4.tgz",
+    "sha256": "fee71731971e94d90bff2ee55f5556dc325e2f6f53ca0b5eff93ed22b9d838dd",
+    "integrity": "sha512-lHZJksE8UImNAr+LL6unqq7jERjdFw5EJasm17srycwL7rXHGdCmgu1L1ttLxUO9i3rdH+QQig+px0icHqLmRw=="
+  },
+  "excluded": {
+    "anthropic/skills": {
+      "restricted": [
+        "docx",
+        "pdf",
+        "pptx",
+        "xlsx"
+      ],
+      "license_not_stated": [
+        "doc-coauthoring"
+      ]
+    },
+    "vercel/skills": {
+      "license_not_stated": [
+        "deploy-to-vercel",
+        "vercel-cli-with-tokens",
+        "vercel-optimize",
+        "web-design-guidelines",
+        "writing-guidelines"
+      ]
+    }
+  }
+}
