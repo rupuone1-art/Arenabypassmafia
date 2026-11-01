@@ -1,0 +1,11 @@
+const pptxgen = require('pptxgenjs');
+const output = process.argv[2] || 'outputs/demo/report.pptx';
+const pptx = new pptxgen();
+pptx.layout = 'LAYOUT_WIDE';
+pptx.author = 'office-agent-skills';
+let slide = pptx.addSlide();
+slide.background = { color: '17324D' };
+slide.addText('Office Agent Skills Demo', { x: 0.7, y: 1.6, w: 11.5, h: 0.6, color: 'FFFFFF', fontSize: 30, bold: true });
+slide.addText('Generated with pptxgenjs', { x: 0.7, y: 2.4, w: 8, h: 0.4, color: 'D9EAF7', fontSize: 18 });
+slide.addText('DOCX  •  XLSX  •  PPTX  •  PDF', { x: 0.7, y: 5.8, w: 8, h: 0.3, color: 'FFFFFF', fontSize: 14 });
+pptx.writeFile({ fileName: output });

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schemas.github.com/copilot/plugin-marketplace.schema.json",
+  "name": "office-agent-skills-marketplace",
+  "description": "Open-source office document skills for compatible coding agents.",
+  "owner": {
+    "name": "Harshal Machhi",
+    "url": "https://github.com/Harshuqt"
+  },
+  "plugins": [
+    {
+      "name": "office-agent-skills",
+      "description": "Skills for creating, editing, validating, and rendering DOCX, XLSX, PPTX, and PDF files.",
+      "version": "0.1.0",
+      "source": "./"
+    }
+  ]
+}

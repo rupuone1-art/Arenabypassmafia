@@ -1,0 +1,14 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "office-agent-skills",
+  "description": "Cross-platform skills for creating, editing, validating, and rendering DOCX, XLSX, PPTX, and PDF files.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Harshal Machhi",
+    "url": "https://github.com/Harshuqt"
+  },
+  "homepage": "https://github.com/Harshuqt/office-agent-skills",
+  "repository": "https://github.com/Harshuqt/office-agent-skills",
+  "license": "Apache-2.0",
+  "keywords": ["office", "docx", "xlsx", "pptx", "pdf", "documents", "agent-skills"]
+}
